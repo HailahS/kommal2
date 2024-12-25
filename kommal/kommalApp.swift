@@ -11,7 +11,7 @@ import SwiftUI
 struct kommalApp: App {
     var body: some Scene {
         WindowGroup {
-            MainScreen()
+            Splash()
         }
     }
 }

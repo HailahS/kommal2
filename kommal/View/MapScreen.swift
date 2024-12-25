@@ -7,83 +7,92 @@
 import SwiftUI
 import MapKit
 
+
+
+// View
 struct MapScreen: View {
+    @StateObject private var viewModel = MapViewModel() // استخدام ViewModel
     
-    @State private var posithon : MapCameraPosition = .userLocation(fallback: .automatic)
+    @State private var isSheetPresented = false // لعرض الشيت
+    @State private var isSearchActive = false // لتحديد ما إذا كان المستخدم في وضع البحث
     
     var body: some View {
         // TabView container to hold multiple tabs
-        TabView {
-            // First tab: Map screen
+     
+         
+                       
+            // أول تبويب: شاشة الخريطة
             ZStack {
                 VStack(spacing: 0) {
-                    
-                    
-                    
                     // Map view
-                    VStack{
-                        Map(position: $posithon){
-                            
-                        }.onAppear(){
+                    VStack {
+                        Map(coordinateRegion: $viewModel.region, annotationItems: viewModel.searchResults) { item in
+                           
+                            MapAnnotation(coordinate: item.coordinate) {
+                                Image(systemName: "mappin")
+                                    .foregroundColor(.circle)
+                                    .font(.title)
+                            }
+                        }
+                        .edgesIgnoringSafeArea(.top)
+                        .onAppear {
                             CLLocationManager().requestWhenInUseAuthorization()
                         }
                     }
-                    
                 }
                 
-                // Plus button (custom button for zoom or other actions)
+                // زر "+" لفتح الشيت
                 Button(action: {
-                    // Action for user location button (e.g., show user profile)
+                    isSheetPresented.toggle() // عرض الشيت عند الضغط على الزر
                 }) {
                     Image(systemName: "plus")
                         .resizable()
                         .frame(width: 40, height: 40)
-                        .foregroundColor(Color(.white))
+                        .foregroundColor(Color.white)
                         .offset(x: 0)
                 }
                 .frame(width: 72, height: 72)
                 .fontWeight(.bold)
                 .background(Circle())
-                .foregroundColor(Color(.ylw))
+                .foregroundColor(Color.ylw) // استخدام اللون الأصفر الصحيح
                 .padding()
-                .offset(x: 140, y: -300).shadow(radius: 1)
-            }
-            .tabItem {
-                Image(systemName: "mappin.and.ellipse") // Icon for this tab
-                Text("Map") // Title for the tab
-            }
-            
-            // Second tab: Profile or other content screen
-            VStack {
-                Text("Browse")
-                    .font(.largeTitle)
+                .offset(x: 140, y: -300)
+                .shadow(radius: 1)
+                .sheet(isPresented: $isSheetPresented) {
+                    // الشيت لبحث الأماكن
+                    VStack {
+                        TextField("ابحث عن مكان", text: $viewModel.searchQuery)
+                            .padding()
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding([.leading, .trailing], 20)
+                        
+                        Button("بحث") {
+                            viewModel.searchForPlaces(query: viewModel.searchQuery) // تنفيذ البحث
+                            isSearchActive = true // تفعيل البحث
+                            isSheetPresented = false // إغلاق الشيت بعد البحث
+                        }
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .padding(.bottom, 20)
+                        
+                        // إذا لم توجد نتائج للبحث
+                        if viewModel.searchResults.isEmpty && isSearchActive {
+                            Text("لا توجد نتائج للبحث.")
+                                .padding()
+                                .foregroundColor(.red)
+                        }
+                    }
                     .padding()
-                // Add more content for the Profile tab here
+                    .presentationDetents([.medium, .large]) // تحديد الشيت ليكون إما medium أو large
+                    .presentationDragIndicator(.visible) // لعرض مؤشر السحب
+                }
             }
-            .tabItem {
-                Image(systemName: "square.grid.2x2.fill") // Icon for this tab
-                Text("Browse") // Title for the tab
-            }
-            
-            // Third tab: Settings or other content screen
-            VStack {
-                Text("Chat")
-                    .font(.largeTitle)
-                    .padding()
-                // Add more content for the Settings tab here
-            }
-            .tabItem {
-                Image(systemName: "apple.intelligence")
-                    // Icon for this tab
-                Text("Chat with AI") // Title for the tab
-            }
-        }
-        .accentColor(.circle)
-        .background(Color.white) // Set the background color of the entire TabView to white
+                    .accentColor(.circle)
+                    .background(Color.white)  // تعيين خلفية التبويبات
     }
 }
-
-// Custom Location struct that conforms to Identifiable
 
 struct MapScreen_Previews: PreviewProvider {
     static var previews: some View {

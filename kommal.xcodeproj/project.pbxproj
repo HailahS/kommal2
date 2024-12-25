@@ -14,7 +14,6 @@
 		770C6AEF2D0F03C90070390B /* kommalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6AEE2D0F03C90070390B /* kommalUITests.swift */; };
 		770C6AF12D0F03C90070390B /* kommalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6AF02D0F03C90070390B /* kommalUITestsLaunchTests.swift */; };
 		770C6B032D0F044A0070390B /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B022D0F044A0070390B /* MainScreen.swift */; };
-		770C6B052D0F04E50070390B /* FilterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B042D0F04E50070390B /* FilterScreen.swift */; };
 		770C6B072D0F05060070390B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B062D0F05060070390B /* Review.swift */; };
 		770C6B092D0F05860070390B /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B082D0F05860070390B /* SignUp.swift */; };
 		770C6B0B2D0F05AA0070390B /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B0A2D0F05AA0070390B /* MapScreen.swift */; };
@@ -22,9 +21,13 @@
 		770C6B112D1046D70070390B /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B102D1046D70070390B /* Splash.swift */; };
 		770C6B132D106AD00070390B /* MapModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B122D106AD00070390B /* MapModel.swift */; };
 		770C6B152D106AE80070390B /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B142D106AE80070390B /* MapViewModel.swift */; };
-		B7465F0F2D12ED4400016827 /* template.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7465F0E2D12ED4400016827 /* template.swift */; };
-		B7465F3B2D14940600016827 /* ‎⁨logo.pdf⁩.MP4 in Resources */ = {isa = PBXBuildFile; fileRef = B7465F3A2D14940600016827 /* ‎⁨logo.pdf⁩.MP4 */; };
 		B7465F5E2D1987E100016827 /* MainScreen1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7465F5D2D1987E100016827 /* MainScreen1.swift */; };
+		B77DDC402D1AD9DB006670E5 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77DDC3F2D1AD9DB006670E5 /* SignUpViewModel.swift */; };
+		B77DDC422D1ADA3D006670E5 /* SignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77DDC412D1ADA32006670E5 /* SignUpModel.swift */; };
+		B77DDC442D1ADAAB006670E5 /* RegistrationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77DDC432D1ADA98006670E5 /* RegistrationSheet.swift */; };
+		B77DDC4B2D1C28A0006670E5 /* Sp.gif in Resources */ = {isa = PBXBuildFile; fileRef = B77DDC4A2D1C28A0006670E5 /* Sp.gif */; };
+		B77DDC4D2D1C29AE006670E5 /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77DDC4C2D1C29AB006670E5 /* GifImage.swift */; };
+		B77DDC532D1C42BB006670E5 /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77DDC522D1C42BB006670E5 /* profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +58,6 @@
 		770C6AEE2D0F03C90070390B /* kommalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kommalUITests.swift; sourceTree = "<group>"; };
 		770C6AF02D0F03C90070390B /* kommalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kommalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		770C6B022D0F044A0070390B /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
-		770C6B042D0F04E50070390B /* FilterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreen.swift; sourceTree = "<group>"; };
 		770C6B062D0F05060070390B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		770C6B082D0F05860070390B /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		770C6B0A2D0F05AA0070390B /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
@@ -63,9 +65,14 @@
 		770C6B102D1046D70070390B /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		770C6B122D106AD00070390B /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
 		770C6B142D106AE80070390B /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
-		B7465F0E2D12ED4400016827 /* template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = template.swift; sourceTree = "<group>"; };
-		B7465F3A2D14940600016827 /* ‎⁨logo.pdf⁩.MP4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "‎⁨logo.pdf⁩.MP4"; sourceTree = "<group>"; };
 		B7465F5D2D1987E100016827 /* MainScreen1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen1.swift; sourceTree = "<group>"; };
+		B77DDC3F2D1AD9DB006670E5 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		B77DDC412D1ADA32006670E5 /* SignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModel.swift; sourceTree = "<group>"; };
+		B77DDC432D1ADA98006670E5 /* RegistrationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationSheet.swift; sourceTree = "<group>"; };
+		B77DDC452D1ADB5D006670E5 /* kommal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = kommal.entitlements; sourceTree = "<group>"; };
+		B77DDC4A2D1C28A0006670E5 /* Sp.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Sp.gif; sourceTree = "<group>"; };
+		B77DDC4C2D1C29AB006670E5 /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		B77DDC522D1C42BB006670E5 /* profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,12 +123,15 @@
 		770C6AD22D0F03C80070390B /* kommal */ = {
 			isa = PBXGroup;
 			children = (
+				B77DDC452D1ADB5D006670E5 /* kommal.entitlements */,
 				770C6AD32D0F03C80070390B /* kommalApp.swift */,
 				770C6B0F2D0F06570070390B /* ViewModel */,
 				770C6B0E2D0F061F0070390B /* Model */,
 				770C6AFD2D0F03CF0070390B /* View */,
 				770C6AD72D0F03C80070390B /* Assets.xcassets */,
+				B77DDC522D1C42BB006670E5 /* profile.swift */,
 				770C6AD92D0F03C80070390B /* Preview Content */,
+				B77DDC4A2D1C28A0006670E5 /* Sp.gif */,
 			);
 			path = kommal;
 			sourceTree = "<group>";
@@ -154,14 +164,13 @@
 		770C6AFD2D0F03CF0070390B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B77DDC432D1ADA98006670E5 /* RegistrationSheet.swift */,
 				770C6B022D0F044A0070390B /* MainScreen.swift */,
 				B7465F5D2D1987E100016827 /* MainScreen1.swift */,
-				770C6B042D0F04E50070390B /* FilterScreen.swift */,
 				770C6B062D0F05060070390B /* Review.swift */,
 				770C6B082D0F05860070390B /* SignUp.swift */,
 				770C6B102D1046D70070390B /* Splash.swift */,
-				B7465F3A2D14940600016827 /* ‎⁨logo.pdf⁩.MP4 */,
-				B7465F0E2D12ED4400016827 /* template.swift */,
+				B77DDC4C2D1C29AB006670E5 /* GifImage.swift */,
 				770C6B0A2D0F05AA0070390B /* MapScreen.swift */,
 				770C6B0C2D0F05F70070390B /* OpenAI.swift */,
 			);
@@ -171,6 +180,7 @@
 		770C6B0E2D0F061F0070390B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B77DDC412D1ADA32006670E5 /* SignUpModel.swift */,
 				770C6B122D106AD00070390B /* MapModel.swift */,
 			);
 			path = Model;
@@ -180,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				770C6B142D106AE80070390B /* MapViewModel.swift */,
+				B77DDC3F2D1AD9DB006670E5 /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,7 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B7465F3B2D14940600016827 /* ‎⁨logo.pdf⁩.MP4 in Resources */,
+				B77DDC4B2D1C28A0006670E5 /* Sp.gif in Resources */,
 				770C6ADB2D0F03C80070390B /* Preview Assets.xcassets in Resources */,
 				770C6AD82D0F03C80070390B /* Assets.xcassets in Resources */,
 			);
@@ -320,13 +331,16 @@
 				770C6B132D106AD00070390B /* MapModel.swift in Sources */,
 				770C6B092D0F05860070390B /* SignUp.swift in Sources */,
 				770C6B112D1046D70070390B /* Splash.swift in Sources */,
+				B77DDC422D1ADA3D006670E5 /* SignUpModel.swift in Sources */,
+				B77DDC4D2D1C29AE006670E5 /* GifImage.swift in Sources */,
 				770C6B0D2D0F05F70070390B /* OpenAI.swift in Sources */,
 				B7465F5E2D1987E100016827 /* MainScreen1.swift in Sources */,
+				B77DDC532D1C42BB006670E5 /* profile.swift in Sources */,
 				770C6B0B2D0F05AA0070390B /* MapScreen.swift in Sources */,
 				770C6B032D0F044A0070390B /* MainScreen.swift in Sources */,
+				B77DDC442D1ADAAB006670E5 /* RegistrationSheet.swift in Sources */,
 				770C6AD42D0F03C80070390B /* kommalApp.swift in Sources */,
-				B7465F0F2D12ED4400016827 /* template.swift in Sources */,
-				770C6B052D0F04E50070390B /* FilterScreen.swift in Sources */,
+				B77DDC402D1AD9DB006670E5 /* SignUpViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,9 +501,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kommal/kommal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kommal/Preview Content\"";
+				DEVELOPMENT_TEAM = 7K39U9Z957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -515,9 +531,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = kommal/kommal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kommal/Preview Content\"";
+				DEVELOPMENT_TEAM = 7K39U9Z957;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

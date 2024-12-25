@@ -1,45 +1,37 @@
-//
-//  MapViewModel.swift
-//  kommal
-//
-//  Created by Ghada al ajmi on 15/06/1446 AH.
-//
-
 import MapKit
+import SwiftUI
 
-final class MapViewModel: ObservableObject{
+class MapViewModel: ObservableObject {
+    @Published var searchQuery = "" // استعلام البحث
+    @Published var searchResults: [MapLocation] = [] // نتائج البحث
+    @Published var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(latitude: 24.7136, longitude: 46.6753), // الرياض
+        span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    ) // المنطقة الافتراضية للخريطة
     
-    @Published var directions1: [MKRoute] = []
-
-    func getDirections(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
-        let sourcePlacemark = MKPlacemark(coordinate: source)
-        let destinationPlacemark = MKPlacemark(coordinate: destination)
+    // دالة البحث عن الأماكن باستخدام MKLocalSearch
+    func searchForPlaces(query: String) {
+        guard !query.isEmpty else { return } // التأكد من وجود نص في الاستعلام
         
-        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = region
         
-        let directionsRequest = MKDirections.Request()
-        directionsRequest.source = sourceMapItem
-        directionsRequest.destination = destinationMapItem
-        directionsRequest.transportType = .automobile
+        let search = MKLocalSearch(request: request)
         
-        var directions = MKDirections(request: directionsRequest)
-        directions.calculate { response, error in
+        // بدء البحث
+        search.start { response, error in
             if let error = error {
-                print("Error getting directions: \(error.localizedDescription)")
+                print("خطأ في البحث: \(error.localizedDescription)")
                 return
             }
             
-            if let route = response?.routes.first {
-                self.directions1 = [route]
-                self.openAppleMapsDirections(from: source, to: destination)
+            if let response = response {
+                // تحويل MapItems إلى MapLocation
+                self.searchResults = response.mapItems.map { item in
+                    MapLocation(id: item.hash, coordinate: item.placemark.coordinate)
+                }
             }
         }
-    }
-    
-    // Open Apple Maps with directions
-    func openAppleMapsDirections(from source: CLLocationCoordinate2D, to destination: CLLocationCoordinate2D) {
-        let url = URL(string: "http://maps.apple.com/?saddr=\(source.latitude),\(source.longitude)&daddr=\(destination.latitude),\(destination.longitude)")!
-        UIApplication.shared.open(url)
     }
 }
