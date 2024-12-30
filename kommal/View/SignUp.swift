@@ -1,10 +1,11 @@
 import SwiftUI
 
 struct SignUp: View {
-    @State private var username: String = "" // لتخزين إدخال اسم المستخدم
-    @State private var password: String = "" // لتخزين إدخال كلمة المرور
-    @State private var isSheetPresented = false
-    
+    @State private var username: String = ""  // لتخزين اسم المستخدم
+    @StateObject private var viewModel = ViewModel() // لتخزين الـ ViewModel
+    @State private var isLoading: Bool = false  // لتحديد حالة التحميل
+    @State private var isUserSaved: Bool = false  // لتحديد ما إذا تم حفظ المستخدم بنجاح
+
     var body: some View {
         NavigationStack { // إضافة NavigationStack للتنقل بين الشاشات
             ZStack {
@@ -18,17 +19,14 @@ struct SignUp: View {
                         .fill(Color.circle.opacity(0.19))
                         .frame(width: 562, height: 612)
                         .offset(y: -225)
-                    
-                    
                 }
-                ZStack{
+                ZStack {
                     Circle()
                         .fill(Color.circle.opacity(0.19)) // شفافية 50%
-                        .frame(width: 562, height: 612).offset(y:200)// حجم الدائرة
-                    
+                        .frame(width: 562, height: 612).offset(y: 200) // حجم الدائرة
                 }
                 
-                VStack(spacing: 10) {
+                VStack(spacing: 40) {
                     // الشعار
                     Image("logo1")
                         .frame(width: 150, height: 150)
@@ -41,77 +39,69 @@ struct SignUp: View {
                             .frame(width: 290.0, height: 50.0)
                             .background(Color.white)
                             .cornerRadius(7)
-                        
-                        
-                        // حقل كلمة المرور
-                        SecureField("Password", text: $password)
-                            .padding()
-                            .frame(width: 290.0, height: 50.0)
-                            .background(Color.white)
-                            .cornerRadius(7)
-                        
-                        
-                        HStack {
-                            Text("I don't have an account")
-                                .foregroundColor(.white)
-                            
-                            Button("Sign up") {
-                                // إظهار الشيت عند الضغط
-                                isSheetPresented = true
+                    }
+                    
+                    // زر التسجيل
+                    Button(action: {
+                        if !username.isEmpty {
+                            // بدء التحميل
+                            isLoading = true
+                            // مناداة دالة addUser مع الـ completion handler
+                            viewModel.addUser(userName: username) { result in
+                                isLoading = false // إيقاف التحميل
+                                switch result {
+                                case .success:
+                                    print("User saved successfully")
+                                    isUserSaved = true // تعيين المستخدم المحفوظ
+                                case .failure(let error):
+                                    print("Failed to save user: \(error.localizedDescription)")
+                                }
                             }
-                            .foregroundColor(.ylw)
+                        } else {
+                            print("Please enter a username")
+                        }
+                    }) {
+                        Text("Get Started")
                             .fontWeight(.bold)
-                        }
-                        
-                        .sheet(isPresented: $isSheetPresented){
-                            // محتوى الشيت
-                            RegistrationSheet().presentationDetents([.height(550)])
-                        }
-                        
-                        .padding(.vertical, 5.0)
-                        .overlay(
-                            Rectangle()
-                                .frame(height: 1) // ارتفاع الخط
-                                .foregroundColor(.white) // لون الخط
-                                .padding(.top, 35), // مسافة بين النص والخط
-                            alignment: .bottom
-                        )
-                        // زر التسجيل
-                        Button(action: {
-                            // الإجراء عند النقر
-                            print("Get Started: \(username), \(password)")
-                        }) {
-                            Text("Get Started")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .frame(width: 140.0, height: 50.0)
-                                .background(Color.ylw)
-                                .cornerRadius(7)
-                        }
-                        .padding()
-                        
-                        // زر Continue as a guest
-                        NavigationLink(destination: MainScreen1()) {
-                            Text("Continue as a guest")
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                        }
-                        .padding(.vertical)
+                            .foregroundColor(.white)
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .frame(width: 140.0, height: 50.0)
+                            .background(Color.ylw)
+                            .cornerRadius(7)
+                    }
+                    .padding()
+                    
+                    // زر Continue as a guest
+                    NavigationLink(destination: MainScreen1()) {
+                        Text("Continue as a guest")
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                    .padding(.vertical)
+
+                    // عرض ProgressView أثناء التحميل
+                    if isLoading {
+                        ProgressView("Saving user...")
+                            .progressViewStyle(CircularProgressViewStyle())
+                            .padding()
+                    }
+                    
+                    // التنقل إلى MainScreen1 عندما يتم حفظ المستخدم بنجاح
+                    // هذه هي الفكرة: استخدم NavigationLink هنا مع تفعيل التنقل بعد نجاح الحفظ
+                    NavigationLink(destination: MainScreen1(), isActive: $isUserSaved) {
+                        EmptyView()  // رابط التنقل الذي يكون غير مرئي ولكن يتم تفعيله بناءً على isUserSaved
                     }
                 }
                 .padding()
                 .cornerRadius(20)
                 .shadow(radius: 5)
-                //  .padding(.horizontal,20) // لتوسيط البطاقة
             }
         }
-    } }
-    
-    // كود محتوى الشيت
-  
+    }
+}
 
 #Preview {
     SignUp()
 }
+

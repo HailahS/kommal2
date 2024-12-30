@@ -12,7 +12,7 @@ struct RegistrationSheet: View {
     @State private var phoneNumber: String = ""
     @State private var confirmPassword: String = ""
     
-    @StateObject private var cloudKitManager = CloudKitManager()
+  
     @State private var message: String = ""
     @State private var showAlert: Bool = false
     @State private var alertMessage: String = ""
@@ -105,20 +105,9 @@ struct RegistrationSheet: View {
                             } else if password != confirmPassword {
                                 alertMessage = "كلمة المرور غير متطابقة."
                                 showAlert.toggle()
-                            } else {
-                                // استدعاء دالة CloudKitManager لحفظ البيانات
-                                cloudKitManager.saveUser(userName: userName, password: password, phoneNumber: phoneNumber) { result in
-                                    switch result {
-                                    case .success(let successMessage):
-                                        alertMessage = successMessage
-                                        showAlert.toggle()
-                                    case .failure(let error):
-                                        alertMessage = "حدث خطأ أثناء حفظ البيانات: \(error.localizedDescription)"
-                                        showAlert.toggle()
-                                    }
-                                }
                             }
-                        }) {
+                            }
+                        ) {
                             Text("Create Account")
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
