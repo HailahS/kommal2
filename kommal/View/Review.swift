@@ -14,8 +14,8 @@ struct ReviewPage: View {
     @State private var userImages: [UIImage] = []
     let defaultImage = "Logo2"
     let reviews = [
-        Review(username: "Ghada", date: "Sat, Aug 32, 2024", rating: 3, comment: "تعبت"),
-        Review(username: "Sadeem", date: "Sat, Aug 31, 2024", rating: 5, comment: "تو متش صراحة")
+        Review(username: "Ghada", date: "Sat, Aug 32, 2024", rating: 3, comment: "اعجبني"),
+        Review(username: "Sadeem", date: "Sat, Aug 31, 2024", rating: 5, comment: "تقييم ممتاز")
     ]
     @State private var showAddSheet = false
     @State private var isLiked = false

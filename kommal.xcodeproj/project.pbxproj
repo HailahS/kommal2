@@ -13,7 +13,6 @@
 		770C6AE52D0F03C80070390B /* kommalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6AE42D0F03C80070390B /* kommalTests.swift */; };
 		770C6AEF2D0F03C90070390B /* kommalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6AEE2D0F03C90070390B /* kommalUITests.swift */; };
 		770C6AF12D0F03C90070390B /* kommalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6AF02D0F03C90070390B /* kommalUITestsLaunchTests.swift */; };
-		770C6B032D0F044A0070390B /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B022D0F044A0070390B /* MainScreen.swift */; };
 		770C6B072D0F05060070390B /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B062D0F05060070390B /* Review.swift */; };
 		770C6B092D0F05860070390B /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B082D0F05860070390B /* SignUp.swift */; };
 		770C6B0B2D0F05AA0070390B /* MapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770C6B0A2D0F05AA0070390B /* MapScreen.swift */; };
@@ -62,7 +61,6 @@
 		770C6AEA2D0F03C90070390B /* kommalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kommalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		770C6AEE2D0F03C90070390B /* kommalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kommalUITests.swift; sourceTree = "<group>"; };
 		770C6AF02D0F03C90070390B /* kommalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kommalUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		770C6B022D0F044A0070390B /* MainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
 		770C6B062D0F05060070390B /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		770C6B082D0F05860070390B /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		770C6B0A2D0F05AA0070390B /* MapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapScreen.swift; sourceTree = "<group>"; };
@@ -176,7 +174,6 @@
 				B77DDC5A2D22E3D4006670E5 /* FilterPage.swift */,
 				B77DDC542D22D239006670E5 /* Test.swift */,
 				B77DDC432D1ADA98006670E5 /* RegistrationSheet.swift */,
-				770C6B022D0F044A0070390B /* MainScreen.swift */,
 				B7465F5D2D1987E100016827 /* MainScreen1.swift */,
 				770C6B062D0F05060070390B /* Review.swift */,
 				770C6B082D0F05860070390B /* SignUp.swift */,
@@ -356,7 +353,6 @@
 				B77DDC572D22D24A006670E5 /* mtest.swift in Sources */,
 				B77DDC532D1C42BB006670E5 /* profile.swift in Sources */,
 				770C6B0B2D0F05AA0070390B /* MapScreen.swift in Sources */,
-				770C6B032D0F044A0070390B /* MainScreen.swift in Sources */,
 				B77DDC442D1ADAAB006670E5 /* RegistrationSheet.swift in Sources */,
 				770C6AD42D0F03C80070390B /* kommalApp.swift in Sources */,
 				B77DDC402D1AD9DB006670E5 /* SignUpViewModel.swift in Sources */,
@@ -525,7 +521,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kommal/Preview Content\"";
-				DEVELOPMENT_TEAM = 7K39U9Z957;
+				DEVELOPMENT_TEAM = KBPSKZJMBN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -555,7 +551,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"kommal/Preview Content\"";
-				DEVELOPMENT_TEAM = 7K39U9Z957;
+				DEVELOPMENT_TEAM = KBPSKZJMBN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

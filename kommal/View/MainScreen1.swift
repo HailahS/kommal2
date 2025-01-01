@@ -104,14 +104,8 @@ struct MainScreen1: View {
                 Image(systemName: "mappin.and.ellipse")
                 Text("Map")
             }
+           
             
-            NavigationView {
-                OpenAI()
-            }
-            .tabItem {
-                Image(systemName: "apple.intelligence")
-                Text("Chat with AI")
-            }
         }
         .accentColor(.circle)
         .navigationBarBackButtonHidden(true)
